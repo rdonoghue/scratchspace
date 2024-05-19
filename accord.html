@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accordion Navigation</title>
+    <style>
+        /* Style for the sidebar */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            padding-top: 20px;
+        }
+
+        /* Style for the accordion links */
+        .accordion {
+            padding: 8px 16px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        /* Hover effect for accordion links */
+        .accordion:hover {
+            background-color: #555;
+        }
+
+        /* Style for the active accordion link */
+        .active {
+            background-color: #4CAF50;
+        }
+
+        /* Style for the expanded content */
+        .panel {
+            display: none;
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="accordion">Section 1</div>
+    <div class="panel">
+        <p>Content for Section 1 goes here.</p>
+    </div>
+    <div class="accordion">Section 2</div>
+    <div class="panel">
+        <p>Content for Section 2 goes here.</p>
+    </div>
+    <div class="accordion">Section 3</div>
+    <div class="panel">
+        <p>Content for Section 3 goes here.</p>
+    </div>
+</div>
+
+<script>
+    // JavaScript to handle accordion functionality
+    const accordions = document.querySelectorAll('.accordion');
+    
+    accordions.forEach(accordion => {
+        accordion.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const panel = this.nextElementSibling;
+            if (panel.style.display === 'block') {
+                panel.style.display = 'none';
+            } else {
+                panel.style.display = 'block';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
