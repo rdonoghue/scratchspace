@@ -2,7 +2,7 @@ from pdfquery import PDFQuery
 import re
 import os
 
-filename="example7.pdf"
+filename="pdf stuff/example8.pdf"
 
 pdf = PDFQuery(filename)
 
